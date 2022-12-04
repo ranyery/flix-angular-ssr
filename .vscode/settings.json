@@ -1,0 +1,26 @@
+{
+  "editor.rulers": [80, 120],
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "extensions.ignoreRecommendations": false,
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.organizeImports": true
+    }
+  },
+  // Files appear invisible, but remain there
+  "files.exclude": {
+    "**/*.spec.*": true
+  },
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "git.allowNoVerifyCommit": false
+}

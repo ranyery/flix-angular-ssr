@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-prettier-scss",
+    "stylelint-config-sass-guidelines",
+    "stylelint-config-idiomatic-order"
+  ],
+  "rules": {
+    "max-line-length": 80,
+    "string-quotes": "double",
+    "property-no-vendor-prefix": null,
+    "declaration-empty-line-before": null,
+    "order/properties-alphabetical-order": null
+  }
+}

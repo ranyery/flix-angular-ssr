@@ -1,0 +1,11 @@
+{
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
+  "recommendations": [
+    "angular.ng-template",
+    "cyrilletuzi.angular-schematics",
+    "johnpapa.angular2",
+    "erhise.vs-ng-quick-switch",
+    "dbaeumer.vscode-eslint",
+    "rbbit.typescript-hero"
+  ]
+}
