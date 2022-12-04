@@ -1,3 +1,5 @@
+@import "src/scss/utils";
+
 :host {
-  display: block;
+  font-size: px-to-rem(32);
 }
