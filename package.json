@@ -4,19 +4,20 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:prod": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "npm run lint:styles && ng lint",
     "lint:styles": "npx stylelint src/**/*.scss",
     "format": "npx prettier --loglevel warn src/**/*.{html,css,scss,js,ts} --write",
-    "add-page": "ng g module pages/page-name --module app --route route-name",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run start",
-    "prepare": "husky install",
     "dev:ssr": "ng run flixtorrent:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build && ng run flixtorrent:server",
-    "prerender": "ng run flixtorrent:prerender"
+    "prerender": "ng run flixtorrent:prerender",
+    "vercel-build": "npm run build:ssr",
+    "prepare": "husky install",
+    "add-page": "ng g module pages/page-name --module app --route route-name",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run start"
   },
   "private": true,
   "engines": {
@@ -76,7 +77,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "npm run format && npm run lint",
-      "pre-push": "npm run build"
+      "pre-push": "npm run build:prod"
     }
   },
   "license": "MIT"
