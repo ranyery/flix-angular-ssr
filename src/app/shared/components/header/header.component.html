@@ -1,3 +1,5 @@
-<header class="header-component">
-  <div class="header-component__logo">FlixTorrent</div>
+<header
+  class="header-component"
+  [ngClass]="{ 'header-component--solid': backgroundSolid }">
+  <div class="header-component__logo">{{ title }}</div>
 </header>

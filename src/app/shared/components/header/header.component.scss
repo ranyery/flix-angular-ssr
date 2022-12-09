@@ -11,8 +11,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
-  background: #141414;
+  background: linear-gradient(to bottom, #111 10%, transparent 90%);
   transition: all ease 0.5s;
+
+  &--solid {
+    background: #141414;
+  }
 
   &__logo {
     color: #e50914;

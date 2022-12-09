@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  OnInit,
+} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +12,15 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  public backgroundSolid: boolean = false;
+  public title: string = 'FlixTorrent';
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.onWindowScroll();
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.backgroundSolid = window.scrollY > 10;
+  }
 }
