@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostListener,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -11,16 +6,6 @@ import {
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit {
-  public backgroundSolid: boolean = false;
+export class HeaderComponent {
   public title: string = 'FlixTorrent';
-
-  ngOnInit(): void {
-    this.onWindowScroll();
-  }
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.backgroundSolid = window.scrollY > 10;
-  }
 }
