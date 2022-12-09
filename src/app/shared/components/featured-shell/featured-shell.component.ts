@@ -8,7 +8,7 @@ import {
 import { IFeaturedInfo } from '../../interfaces/IFeaturedInfo';
 
 @Component({
-  selector: 'app-featured',
+  selector: 'app-featured-shell',
   templateUrl: './featured-shell.component.html',
   styleUrls: ['./featured-shell.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
