@@ -8,6 +8,7 @@
   "rules": {
     "max-line-length": 80,
     "string-quotes": "double",
+    "max-nesting-depth": null,
     "property-no-vendor-prefix": null,
     "declaration-empty-line-before": null,
     "order/properties-alphabetical-order": null

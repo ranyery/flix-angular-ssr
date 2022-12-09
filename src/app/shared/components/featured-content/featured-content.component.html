@@ -1,0 +1,15 @@
+<div class="featured-content">
+  <h2 class="featured-content__title">{{ featuredInfo.title }}</h2>
+  <p class="featured-content__info">
+    <span class="imdb-rating">IMDb: {{ featuredInfo.imdbRating }}/10</span>
+    &#183; {{ featuredInfo.releaseDate }} &#183;
+    {{ featuredInfo.runtime | runtime }}
+  </p>
+  <p class="featured-content__overview">
+    {{ featuredInfo.overview }}
+  </p>
+  <p class="featured-content__genres">
+    <span style="font-weight: bold">Gêneros</span>:
+    {{ featuredInfo.genres.join(", ") }}
+  </p>
+</div>
