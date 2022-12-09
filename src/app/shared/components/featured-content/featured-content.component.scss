@@ -31,7 +31,12 @@
   &__overview {
     max-width: 40%;
     color: #999;
-    font-size: 20px;
+    font-size: px-to-rem(20);
+  }
+
+  &__actions {
+    display: flex;
+    gap: 16px;
   }
 
   &__genres {

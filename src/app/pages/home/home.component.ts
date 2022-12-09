@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     runtime: 125,
     overview:
       'A Siderúrgica Gusmão desenvolve uma fórmula secreta que vira alvo da cobiça de Leonardo, irmão da diretora da empresa, Clarice. Pat e Moa são contratados para encontrar a fórmula, mas precisam investi...',
-    genres: ['Comédia', 'Action', 'Adventure', 'Soap'],
+    genres: ['Comédia', 'Action', 'Adventure'],
     backgroundImage:
       'https://image.tmdb.org/t/p/original/1UCGE1Dl7iClKIbDMcGWiHKVWCU.jpg',
   };

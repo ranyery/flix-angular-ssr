@@ -1,0 +1,26 @@
+@import "src/scss/utils";
+
+.button-component {
+  padding: 12px 26px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: px-to-rem(20);
+  font-weight: bold;
+  opacity: 1;
+  transition: all ease 0.2s;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &--primary {
+    background-color: #fff;
+    color: #000;
+  }
+
+  &--secondary {
+    background-color: #333;
+    color: #fff;
+  }
+}
