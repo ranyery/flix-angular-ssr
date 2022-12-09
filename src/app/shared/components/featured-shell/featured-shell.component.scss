@@ -15,7 +15,8 @@
 .featured-shell {
   height: calc(100vh - 72px);
 
-  background-position: center center;
+  background-color: #111;
+  background-repeat: no-repeat;
   background-size: cover;
 
   &__vertical-shadow {
