@@ -9,9 +9,7 @@
   flex-direction: column;
   justify-content: center;
 
-  padding-top: 70px;
-  padding-bottom: 150px;
-  padding-left: 32px;
+  padding: 72px 0 152px 32px;
   gap: 16px;
 
   &__title {
@@ -42,5 +40,29 @@
   &__genres {
     color: #999;
     font-size: px-to-rem(18);
+  }
+
+  @media (max-width: 760px) {
+    height: 90vh;
+    padding: 72px 32px 152px;
+
+    &__title {
+      font-size: px-to-rem(40);
+    }
+
+    &__info,
+    &__overview,
+    &__genres {
+      font-size: px-to-rem(16);
+    }
+
+    &__overview {
+      /* stylelint-disable */
+      display: -webkit-box;
+      overflow: hidden;
+      max-width: 100%;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+    }
   }
 }

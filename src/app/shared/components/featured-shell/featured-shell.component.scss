@@ -29,4 +29,10 @@
     @extend %shadow-default-position;
     background: linear-gradient(to right, #111 30%, transparent 70%);
   }
+
+  @media (max-width: 760px) {
+    &__horizontal-shadow {
+      background: linear-gradient(to right, #111 20%, transparent 100%);
+    }
+  }
 }

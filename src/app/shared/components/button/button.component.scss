@@ -5,6 +5,7 @@
   border: 0;
   border-radius: 5px;
   cursor: pointer;
+  font-family: Roboto, sans-serif;
   font-size: px-to-rem(20);
   font-weight: bold;
   opacity: 1;
@@ -22,5 +23,9 @@
   &--secondary {
     background-color: #333;
     color: #fff;
+  }
+
+  @media (max-width: 760px) {
+    font-size: px-to-rem(16);
   }
 }
