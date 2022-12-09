@@ -43,11 +43,16 @@
   }
 
   @media (max-width: 760px) {
-    height: 90vh;
     padding: 72px 32px 152px;
 
     &__title {
+      /* stylelint-disable */
+      display: -webkit-box;
+      overflow: hidden;
       font-size: px-to-rem(40);
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      /* stylelint-enable */
     }
 
     &__info,
@@ -63,6 +68,7 @@
       max-width: 100%;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 6;
+      /* stylelint-enable */
     }
   }
 }
