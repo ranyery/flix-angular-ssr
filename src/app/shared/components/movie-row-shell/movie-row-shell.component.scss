@@ -2,7 +2,7 @@
   margin-bottom: 30px;
 
   &__title {
-    margin-left: 32px;
+    margin-left: 40px;
   }
 
   &__left {
@@ -20,7 +20,7 @@
     display: flex;
     overflow: hidden;
     width: 40px;
-    height: 225px;
+    height: 302px;
     align-items: center;
     justify-content: center;
     background-color: rgb(0 0 0 / 60%);
@@ -39,23 +39,8 @@
   }
 
   &__list {
+    display: flex;
     transition: all ease 0.5s;
-  }
-
-  &__item {
-    display: inline-block;
-    width: 150px;
-    cursor: pointer;
-
-    > img {
-      width: 100%;
-      transform: scale(0.9);
-      transition: all ease 0.2s;
-
-      &:hover {
-        transform: scale(1);
-      }
-    }
   }
 
   @media (max-width: 760px) {

@@ -4,17 +4,9 @@
   <div (click)="handleRightArrowClick()" class="movie-row-shell__right">▶</div>
   <div class="movie-row-shell__listarea">
     <div
-      [ngStyle]="{
-        'margin-left': scrollX + 'px',
-        width: 150 * items.length + 'px'
-      }"
-      class="movie-row-shell__list"
-      style="margin-left: 0px">
-      <div class="movie-row-shell__item" *ngFor="let item of items">
-        <img
-          src="https://image.tmdb.org/t/p/w300/84dzLDiFiACIqKtqQwzmB6GL7uC.jpg"
-          alt="Alt da imagem {{ item }}" />
-      </div>
+      [ngStyle]="{ 'margin-left': scrollX + 'px' }"
+      class="movie-row-shell__list">
+      <app-movie-card *ngFor="let item of items"></app-movie-card>
     </div>
   </div>
 </section>
