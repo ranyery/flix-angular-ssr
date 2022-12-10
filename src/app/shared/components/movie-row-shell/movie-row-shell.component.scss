@@ -1,0 +1,67 @@
+.movie-row-shell {
+  margin-bottom: 30px;
+
+  &__title {
+    margin-left: 32px;
+  }
+
+  &__left {
+    left: 0;
+  }
+
+  &__right {
+    right: 0;
+  }
+
+  &__left,
+  &__right {
+    position: absolute;
+    z-index: 99;
+    display: flex;
+    overflow: hidden;
+    width: 40px;
+    height: 225px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0 0 0 / 60%);
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.5s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__listarea {
+    padding-left: 40px;
+    overflow-x: hidden;
+  }
+
+  &__list {
+    transition: all ease 0.5s;
+  }
+
+  &__item {
+    display: inline-block;
+    width: 150px;
+    cursor: pointer;
+
+    > img {
+      width: 100%;
+      transform: scale(0.9);
+      transition: all ease 0.2s;
+
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+
+  @media (max-width: 760px) {
+    &__left,
+    &__right {
+      opacity: 1;
+    }
+  }
+}
