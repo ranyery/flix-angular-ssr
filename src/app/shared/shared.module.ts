@@ -9,6 +9,7 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
 import { MovieRowShellComponent } from './components/movie-row-shell/movie-row-shell.component';
 import { RuntimePipe } from './pipes/runtime.pipe';
 import { MovieService } from './services/movie.service';
+import { TransferStateService } from './services/transfer-state.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { MovieService } from './services/movie.service';
     MovieRowShellComponent,
     RuntimePipe,
   ],
-  providers: [MovieService],
+  providers: [MovieService, TransferStateService],
   imports: [CommonModule],
   exports: [
     ButtonComponent,
