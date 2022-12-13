@@ -1,7 +1,8 @@
 <section
+  *ngIf="featuredInfo"
   class="featured-shell"
   [ngStyle]="{
-    'background-image': 'url(' + featuredInfo.backgroundImage + ')'
+    'background-image': 'url(' + featuredInfo.backdrop_path + ')'
   }">
   <div class="featured-shell__vertical-shadow"></div>
   <div class="featured-shell__horizontal-shadow"></div>

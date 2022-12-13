@@ -1,22 +1,22 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { IFeaturedInfo } from '../../interfaces/IFeaturedInfo';
+import { IMovie } from '../../interfaces/IMovie';
+import { MovieService } from '../../services/movie.service';
 
 @Component({
   selector: 'app-featured-shell',
   templateUrl: './featured-shell.component.html',
   styleUrls: ['./featured-shell.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeaturedShellComponent implements OnInit {
-  @Input() public featuredInfo!: IFeaturedInfo;
+  public featuredInfo: IMovie | null = null;
 
-  constructor() {}
+  constructor(private movieService: MovieService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const idRandomMovie = Math.floor(Math.random() * 250) + 1;
+    this.movieService.getById(idRandomMovie).subscribe((data) => {
+      this.featuredInfo = data;
+    });
+  }
 }

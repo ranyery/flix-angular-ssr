@@ -5,7 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 
-import { IFeaturedInfo } from '../../interfaces/IFeaturedInfo';
+import { IMovie } from '../../interfaces/IMovie';
 
 @Component({
   selector: 'app-featured-content',
@@ -14,7 +14,7 @@ import { IFeaturedInfo } from '../../interfaces/IFeaturedInfo';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeaturedContentComponent implements OnInit {
-  @Input() public featuredInfo!: IFeaturedInfo;
+  @Input() public featuredInfo!: IMovie;
 
   constructor() {}
 

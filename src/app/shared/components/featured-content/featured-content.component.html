@@ -2,7 +2,7 @@
   <h2 class="featured-content__title">{{ featuredInfo.title }}</h2>
   <p class="featured-content__info">
     <span class="imdb-rating">IMDb: {{ featuredInfo.imdbRating }}/10</span>
-    &#183; {{ featuredInfo.releaseDate }} &#183;
+    &#183; {{ featuredInfo.release_date | date : "Y" }} &#183;
     {{ featuredInfo.runtime | runtime }}
   </p>
   <p class="featured-content__overview">
