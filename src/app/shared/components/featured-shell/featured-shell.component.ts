@@ -35,14 +35,12 @@ export class FeaturedShellComponent implements OnInit {
       );
       this.stateService.saveState<IMovie>('featuredMovie', featuredMovie);
       this.featuredInfo = featuredMovie;
-      console.log('isServer', this.isServer);
     } else {
       this.featuredInfo = this.stateService.hasState<IMovie>('featuredMovie')
         ? this.stateService.getState<IMovie>('featuredMovie')
         : await await this.coreService.waitFor(
             this.movieService.getById(idRandomMovie)
           );
-      console.log('isBrowser', this.isBrowser);
     }
   }
 }
