@@ -17,7 +17,6 @@ export class HomeResolver implements Resolve<IMovie> {
     _route: ActivatedRouteSnapshot,
     _state: RouterStateSnapshot
   ): Observable<IMovie> {
-    const idRandomMovie = Math.floor(Math.random() * 250) + 1;
-    return this.movieService.getById(idRandomMovie);
+    return this.movieService.getFeatured();
   }
 }
