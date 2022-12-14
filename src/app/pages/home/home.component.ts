@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IMovie } from 'src/app/shared/interfaces/IMovie';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  public featuredMovie: IMovie;
+
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.featuredMovie = this.activatedRoute.snapshot.data?.['featuredMovie'];
+  }
 
   ngOnInit(): void {}
 }

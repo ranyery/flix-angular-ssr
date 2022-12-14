@@ -11,19 +11,16 @@ export class MovieService {
   private BASE_URL = `${API_PATH}/movies`;
   constructor(private httpClient: HttpClient) {}
 
-  getById(id: number): Promise<IMovie | undefined> {
-    return this.httpClient
-      .get<IMovie>(`${this.BASE_URL}/${id}`)
-      .pipe(
-        map((movie) => {
-          const { backdrop_path } = movie;
-          return {
-            ...movie,
-            backdrop_path: `https://image.tmdb.org/t/p/original${backdrop_path}`,
-          };
-        })
-      )
-      .toPromise();
+  getById(id: number): Observable<IMovie> {
+    return this.httpClient.get<IMovie>(`${this.BASE_URL}/${id}`).pipe(
+      map((movie) => {
+        const { backdrop_path } = movie;
+        return {
+          ...movie,
+          backdrop_path: `https://image.tmdb.org/t/p/original${backdrop_path}`,
+        };
+      })
+    );
   }
 
   getAll(): Observable<IMovie[]> {

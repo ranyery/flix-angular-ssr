@@ -1,10 +1,10 @@
 <section
-  *ngIf="featuredInfo"
+  *ngIf="featuredMovie"
   class="featured-shell"
   [ngStyle]="{
-    'background-image': 'url(' + featuredInfo.backdrop_path + ')'
+    'background-image': 'url(' + featuredMovie.backdrop_path + ')'
   }">
   <div class="featured-shell__vertical-shadow"></div>
   <div class="featured-shell__horizontal-shadow"></div>
-  <app-featured-content [featuredInfo]="featuredInfo"></app-featured-content>
+  <app-featured-content [featuredInfo]="featuredMovie"></app-featured-content>
 </section>
