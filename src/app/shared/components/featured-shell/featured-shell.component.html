@@ -2,10 +2,7 @@
   *ngIf="featuredMovie"
   class="featured-shell"
   [ngStyle]="{
-    'background-image':
-      'url(https://image.tmdb.org/t/p/original' +
-      featuredMovie.backdrop_path +
-      ')'
+    'background-image': 'url(./assets/background/1440x810/' + slug + '.jpg)'
   }">
   <div class="featured-shell__vertical-shadow"></div>
   <div class="featured-shell__horizontal-shadow"></div>
