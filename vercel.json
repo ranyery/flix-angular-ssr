@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "public": true,
+  "public": false,
   "name": "flix",
   "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
   "functions": {
