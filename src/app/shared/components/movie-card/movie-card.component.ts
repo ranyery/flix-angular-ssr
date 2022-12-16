@@ -14,10 +14,13 @@ import { IMovie } from '../../interfaces/IMovie';
 })
 export class MovieCardComponent implements OnInit {
   @Input() public movie!: IMovie;
+  public movieSlug!: string;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.movieSlug = this.slugify(this.movie.title);
+  }
 
   public slugify(text: string): string {
     return text
