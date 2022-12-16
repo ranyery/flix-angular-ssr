@@ -2,8 +2,11 @@ import 'zone.js/node';
 
 import { APP_BASE_HREF } from '@angular/common';
 import { ngExpressEngine } from '@nguniversal/express-engine';
+import * as compression from 'compression';
 import * as express from 'express';
+import { responseHandler } from 'express-intercept';
 import { existsSync } from 'fs';
+import { minify } from 'html-minifier-terser';
 import { join } from 'path';
 
 import { AppServerModule } from './src/main.server';
@@ -11,6 +14,20 @@ import { AppServerModule } from './src/main.server';
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
+  server.use(compression({ level: 9, memLevel: 9 }));
+  server.use(
+    responseHandler()
+      .if((res) => /html/i.test(String(res.getHeader('content-type'))))
+      .replaceString(async (body) => {
+        // return body;
+        return await minify(body, {
+          removeAttributeQuotes: true,
+          collapseWhitespace: true,
+          removeComments: true,
+          html5: true,
+        });
+      })
+  );
   const distFolder = join(process.cwd(), 'dist/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html'))
     ? 'index.original.html'
