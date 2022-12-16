@@ -24,7 +24,8 @@ function fromDir(startPath, filter) {
         input: filename,
         output: filename,
         callback: (err) => {
-          console.log(err ? '🔴 Minify error' : '🟢 Minify success');
+          const [icon, result] = [err ? '🔴' : '🟢', err ? 'Error' : 'Success'];
+          console.log(`${icon} ${result} minify: ${filename}`);
         },
       });
     }
