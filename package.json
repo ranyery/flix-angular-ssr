@@ -13,7 +13,7 @@
     "dev:ssr": "ng run flix:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build && ng run flix:server",
-    "prerender": "ng run flix:prerender",
+    "prerender": "ng run flix:prerender --routes-file ./routes.txt",
     "vercel-build": "npm run build:ssr",
     "prepare": "husky install",
     "add-page": "ng g module pages/page-name --module module-name --route route-name",
