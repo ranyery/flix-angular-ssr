@@ -16,17 +16,18 @@ export class FetchOrCacheService {
   }
 
   public set<T>(stateKey: string, observable: Observable<T>): Observable<T> {
+    const hasState = this.stateService.hasState<T>(stateKey);
+
+    if (hasState) {
+      return of(this.stateService.getState<T>(stateKey));
+    }
+
     if (this.isServer) {
       return observable.pipe(
         tap((response) => {
           this.stateService.saveState<T>(stateKey, response);
         })
       );
-    }
-
-    const hasState = this.stateService.hasState<T>(stateKey);
-    if (hasState) {
-      return of(this.stateService.getState<T>(stateKey));
     }
 
     return observable;
