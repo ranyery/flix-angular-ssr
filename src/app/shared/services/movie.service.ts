@@ -26,7 +26,7 @@ export class MovieService {
     );
   }
 
-  getAll(): Observable<IMovie[]> {
-    return this.httpClient.get<IMovie[]>(this.BASE_URL);
+  getAll(): Observable<any> {
+    return this.httpClient.get<any>(this.BASE_URL);
   }
 }

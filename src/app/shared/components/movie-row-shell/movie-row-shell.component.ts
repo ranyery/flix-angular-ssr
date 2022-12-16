@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 
 @Component({
   selector: 'app-movie-row-shell',
@@ -7,6 +12,11 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieRowShellComponent implements OnInit {
+  @Input() public section!: any;
+
+  public sectionName!: any;
+  public movies!: any;
+
   private amountOfClicks: number = 1;
   public scrollX: number = 0;
   public items: number[] = [
@@ -15,7 +25,10 @@ export class MovieRowShellComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.sectionName = Object.keys(this.section)[0];
+    this.movies = Object.values(this.section)[0];
+  }
 
   public handleLeftArrowClick() {
     let x = this.scrollX + Math.round(window.innerWidth / 2);

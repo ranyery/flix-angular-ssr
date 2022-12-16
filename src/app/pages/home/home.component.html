@@ -1,5 +1,5 @@
 <app-featured-shell [featuredMovie]="featuredMovie"></app-featured-shell>
-<div class="movie-row-list">
-  <!-- <app-movie-row-shell *ngFor="let item of [0, 1, 2]"></app-movie-row-shell> -->
-  <app-movie-row-shell></app-movie-row-shell>
+<div class="movie-row-list" *ngIf="sections">
+  <app-movie-row-shell *ngFor="let section of sections" [section]="section">
+  </app-movie-row-shell>
 </div>

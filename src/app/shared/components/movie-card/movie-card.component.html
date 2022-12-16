@@ -1,10 +1,10 @@
-<div class="movie-card-component">
-  <span class="movie-card-component__rating">⭐6,9</span>
+<div class="movie-card-component" *ngIf="movie">
+  <span class="movie-card-component__rating">{{ movie.imdbRating }}</span>
   <span class="movie-card-component__quality">FULL HD</span>
   <span class="movie-card-component__category">Filmes</span>
   <span class="movie-card-component__audio">Dublado</span>
   <img
-    src="./assets/poster/300x450/batman-o-cavaleiro-das-trevas.jpg"
+    src="./assets/poster/300x450/{{ slugify(movie.title) }}.jpg"
     width="200"
     height="300"
     alt="Alt da imagem" />

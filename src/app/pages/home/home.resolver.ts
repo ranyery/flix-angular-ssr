@@ -17,6 +17,6 @@ export class HomeResolver implements Resolve<IMovie> {
     _route: ActivatedRouteSnapshot,
     _state: RouterStateSnapshot
   ): Observable<IMovie> {
-    return this.movieService.getFeatured();
+    return this.movieService.getAll();
   }
 }
