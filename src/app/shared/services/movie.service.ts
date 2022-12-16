@@ -27,6 +27,9 @@ export class MovieService {
   }
 
   getAll(): Observable<any> {
-    return this.httpClient.get<any>(this.BASE_URL);
+    return this.fetchOrCacheService.set<IMovie>(
+      'getAll',
+      this.httpClient.get<any>(this.BASE_URL)
+    );
   }
 }
