@@ -34,7 +34,6 @@
     "@angular/platform-server": "^14.2.0",
     "@angular/router": "^14.2.0",
     "@nguniversal/express-engine": "^14.2.3",
-    "@vercel/analytics": "^0.1.6",
     "express": "^4.15.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
