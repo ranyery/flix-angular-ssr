@@ -13,7 +13,7 @@
     "dev:ssr": "ng run flix:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build && ng run flix:server",
-    "prerender": "ng run flix:prerender --routes-file ./routes.txt",
+    "prerender": "ng run flix:prerender --routes-file ./routes.txt && node ./minifyHtml.js",
     "vercel-build": "npm run prerender",
     "prepare": "husky install",
     "add-page": "ng g module pages/page-name --module module-name --route route-name",
@@ -36,9 +36,6 @@
     "@angular/router": "^14.2.0",
     "@nguniversal/express-engine": "^14.2.3",
     "express": "^4.15.2",
-    "express-intercept": "^1.0.0",
-    "html-minifier": "^4.0.0",
-    "html-minifier-terser": "^7.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

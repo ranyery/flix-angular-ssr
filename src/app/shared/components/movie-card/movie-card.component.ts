@@ -19,10 +19,10 @@ export class MovieCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.movieSlug = this.slugify(this.movie.title);
+    this.movieSlug = this.slugify(this.movie?.title);
   }
 
-  public slugify(text: string): string {
+  public slugify(text: string = ''): string {
     return text
       .toString()
       .normalize('NFD')
