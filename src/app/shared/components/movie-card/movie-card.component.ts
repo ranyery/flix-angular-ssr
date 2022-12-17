@@ -4,6 +4,8 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { IMovie } from '../../interfaces/IMovie';
 
 @Component({
@@ -16,13 +18,17 @@ export class MovieCardComponent implements OnInit {
   @Input() public movie!: IMovie;
   public movieSlug!: string;
 
-  constructor() {}
+  constructor(private route: Router) {}
 
   ngOnInit(): void {
     this.movieSlug = this.slugify(this.movie?.title);
   }
 
-  public slugify(text: string = ''): string {
+  public handleClick(): void {
+    this.route.navigate(['/', this.movieSlug]);
+  }
+
+  private slugify(text: string = ''): string {
     return text
       .toString()
       .normalize('NFD')

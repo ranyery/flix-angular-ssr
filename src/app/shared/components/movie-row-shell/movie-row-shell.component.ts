@@ -19,9 +19,6 @@ export class MovieRowShellComponent implements OnInit {
 
   private amountOfClicks: number = 1;
   public scrollX: number = 0;
-  public items: number[] = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  ];
 
   constructor() {}
 
@@ -41,13 +38,13 @@ export class MovieRowShellComponent implements OnInit {
     const cardsVisible = Math.floor((window.innerWidth - 40) / 200);
     if (cardsVisible === 1) this.amountOfClicks -= 1;
     if (this.scrollX === 0) this.amountOfClicks = 1;
-    console.log('amountOfClicks', this.amountOfClicks);
+    // console.log('amountOfClicks', this.amountOfClicks);
   }
 
   public handleRightArrowClick() {
-    if (this.amountOfClicks >= this.items.length) return;
+    if (this.amountOfClicks >= this.section.length) return;
 
-    const maxMarginLeft = (this.items.length * 200) / 2 + 200;
+    const maxMarginLeft = (this.section.length * 200) / 2 + 200;
     const cardsVisible = Math.floor((window.innerWidth - 40) / 200);
 
     if (this.scrollX === 0 && cardsVisible === 1) {
@@ -59,13 +56,13 @@ export class MovieRowShellComponent implements OnInit {
         window.innerWidth / 2;
       this.scrollX = -middleScreen;
       this.amountOfClicks += 1;
-      console.log('amountOfClicks', this.amountOfClicks);
+      // console.log('amountOfClicks', this.amountOfClicks);
       return;
     }
 
     if (cardsVisible === 1) {
       this.amountOfClicks += 1;
-      console.log('amountOfClicks', this.amountOfClicks);
+      // console.log('amountOfClicks', this.amountOfClicks);
       this.scrollX -= 200;
       return;
     }
@@ -76,7 +73,7 @@ export class MovieRowShellComponent implements OnInit {
     ) {
       this.scrollX = -maxMarginLeft;
       this.amountOfClicks = 0;
-      console.log('amountOfClicks', this.amountOfClicks);
+      // console.log('amountOfClicks', this.amountOfClicks);
       return;
     }
 

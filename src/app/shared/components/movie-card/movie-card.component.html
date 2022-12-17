@@ -1,4 +1,4 @@
-<div class="movie-card-component" *ngIf="movie">
+<div class="movie-card-component" *ngIf="movie" (click)="handleClick()">
   <span class="movie-card-component__rating">⭐{{ movie.imdbRating }}</span>
   <span class="movie-card-component__quality">FULL HD</span>
   <span class="movie-card-component__category">Filmes</span>

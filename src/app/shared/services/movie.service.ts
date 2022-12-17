@@ -9,20 +9,16 @@ import { FetchOrCacheService } from './fetch-or-cache.service';
 @Injectable({ providedIn: 'root' })
 export class MovieService {
   private BASE_URL = `${API_PATH}/movies`;
+
   constructor(
     private httpClient: HttpClient,
     private fetchOrCacheService: FetchOrCacheService
   ) {}
 
-  public getFeatured(): Observable<IMovie> {
-    const idRandomMovie = Math.floor(Math.random() * 250) + 1;
-    return this.getById(idRandomMovie, 'featured');
-  }
-
-  getById(id: number, stateKey?: string): Observable<IMovie> {
+  getBySlug(slug: string): Observable<IMovie> {
     return this.fetchOrCacheService.set<IMovie>(
-      stateKey || 'getById',
-      this.httpClient.get<IMovie>(`${this.BASE_URL}/${id}`)
+      slug,
+      this.httpClient.get<IMovie>(`${this.BASE_URL}/${slug}`)
     );
   }
 

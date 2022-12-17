@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { ButtonComponent } from './components/button/button.component';
 import { FeaturedContentComponent } from './components/featured-content/featured-content.component';
@@ -20,7 +21,7 @@ import { RuntimePipe } from './pipes/runtime.pipe';
     RuntimePipe,
   ],
   providers: [],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [
     ButtonComponent,
     FeaturedShellComponent,

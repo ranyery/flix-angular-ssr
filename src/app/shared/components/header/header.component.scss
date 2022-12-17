@@ -15,6 +15,10 @@
   box-shadow: rgb(0 0 0 / 45%) 0 25px 20px -20px;
   transition: all ease 0.5s;
 
+  a {
+    text-decoration: none;
+  }
+
   &__logo {
     color: #e50914;
     font-size: px-to-rem(32);

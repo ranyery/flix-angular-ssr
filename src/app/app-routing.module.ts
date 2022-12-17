@@ -9,6 +9,12 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: ':slug',
+    loadChildren: () =>
+      import('./pages/movie/movie.module').then((m) => m.MovieModule),
+    pathMatch: 'full',
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: '',
