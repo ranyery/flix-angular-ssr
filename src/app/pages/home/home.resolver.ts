@@ -9,14 +9,23 @@ import { Observable } from 'rxjs';
 import { IMovie } from '../../shared/interfaces/IMovie';
 import { MovieService } from '../../shared/services/movie.service';
 
+interface ISection {
+  [k: string]: Partial<IMovie>[];
+}
+
+interface IGetAllResponse {
+  featured: IMovie;
+  sections: ISection[];
+}
+
 @Injectable({ providedIn: 'root' })
-export class HomeResolver implements Resolve<IMovie> {
+export class HomeResolver implements Resolve<IGetAllResponse> {
   constructor(private movieService: MovieService) {}
 
   resolve(
     _route: ActivatedRouteSnapshot,
     _state: RouterStateSnapshot
-  ): Observable<IMovie> {
+  ): Observable<IGetAllResponse> {
     return this.movieService.getAll();
   }
 }

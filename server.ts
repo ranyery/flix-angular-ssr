@@ -14,6 +14,9 @@ import { getAll, getBySlug } from './handlerMovies';
 export function app(): express.Express {
   const server = express();
   const distFolder = join(process.cwd(), 'dist/browser');
+  /**
+   * Não é uma boa ideia trocar os valores abaixo, pois estava aumentando o loading
+   */
   const indexHtml = existsSync(join(distFolder, 'index.original.html'))
     ? 'index.original.html'
     : 'index';
