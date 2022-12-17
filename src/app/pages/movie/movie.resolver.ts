@@ -4,21 +4,20 @@ import {
   Resolve,
   RouterStateSnapshot,
 } from '@angular/router';
-import { Observable } from 'rxjs';
+// eslint-disable-next-line sort-imports
+import { catchError, Observable, of } from 'rxjs';
 import { IMovie } from 'src/app/shared/interfaces/IMovie';
 import { MovieService } from 'src/app/shared/services/movie.service';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class MovieResolver implements Resolve<IMovie> {
+@Injectable({ providedIn: 'root' })
+export class MovieResolver implements Resolve<IMovie | null> {
   constructor(private movieService: MovieService) {}
 
   resolve(
     route: ActivatedRouteSnapshot,
     _state: RouterStateSnapshot
-  ): Observable<IMovie> {
+  ): Observable<IMovie | null> {
     const slug = route.params['slug'];
-    return this.movieService.getBySlug(slug);
+    return this.movieService.getBySlug(slug).pipe(catchError(() => of(null)));
   }
 }

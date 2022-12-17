@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IMovie } from 'src/app/shared/interfaces/IMovie';
 
 @Component({
@@ -9,9 +9,10 @@ import { IMovie } from 'src/app/shared/interfaces/IMovie';
 })
 export class MovieComponent implements OnInit {
   public movieData!: IMovie;
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute, private route: Router) {}
 
   ngOnInit(): void {
     this.movieData = this.activatedRoute.snapshot.data?.['movieData'];
+    if (!this.movieData) this.route.navigate(['/']);
   }
 }
