@@ -54,7 +54,7 @@
 /amnesia
 /os-cacadores-da-arca-perdida
 /django-livre
-/walle
+/wall-e
 /a-vida-dos-outros
 /crepusculo-dos-deuses
 /gloria-feita-de-sangue

@@ -1,14 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { API_PATH } from 'src/environments/environment';
 
 import { IMovie } from '../interfaces/IMovie';
 import { FetchOrCacheService } from './fetch-or-cache.service';
 
 @Injectable({ providedIn: 'root' })
 export class MovieService {
-  private BASE_URL = `${API_PATH}/movies`;
+  private BASE_URL = '/api/movies';
 
   constructor(
     private httpClient: HttpClient,

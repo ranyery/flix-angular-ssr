@@ -18,7 +18,10 @@ export class MovieComponent implements OnInit {
 
   ngOnInit(): void {
     this.movieData = this.activatedRoute.snapshot.data?.['movieData'];
-    if (!this.movieData) this.route.navigate(['/']);
+    if (!this.movieData) {
+      this.route.navigate(['/']);
+      return;
+    }
 
     this.seoService.setMetaTitle(`${this.movieData.title} | Flix`);
     this.seoService.setMetaDescription(

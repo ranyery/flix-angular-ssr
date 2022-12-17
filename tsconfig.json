@@ -18,7 +18,9 @@
     "target": "ES6",
     "module": "ES2020",
     "lib": ["ES2020", "DOM", "ES2021.String"],
-    "pretty": true
+    "pretty": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
