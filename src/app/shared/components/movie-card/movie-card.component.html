@@ -1,11 +1,11 @@
-<div class="movie-card-component" *ngIf="movie" (click)="handleClick()">
-  <span class="movie-card-component__rating">⭐{{ movie.imdbRating }}</span>
-  <!-- <span class="movie-card-component__quality">FULL HD</span> -->
-  <!-- <span class="movie-card-component__category">Filmes</span> -->
-  <!-- <span class="movie-card-component__audio">Dublado</span> -->
+<article *ngIf="movie" (click)="handleClick()" class="movie-card">
+  <span class="movie-card__rating">⭐{{ movie.imdbRating }}</span>
+  <!-- <span class="movie-card__quality">FULL HD</span> -->
+  <!-- <span class="movie-card__category">Filmes</span> -->
+  <!-- <span class="movie-card__audio">Dublado</span> -->
   <img
     src="./assets/poster/300x450/{{ movieSlug }}.jpg"
     width="200"
     height="300"
     [alt]="movie.title" />
-</div>
+</article>
